@@ -1,0 +1,77 @@
+\documentclass[12 pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{matlab-prettifier}
+\usepackage[portuguese]{babel}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage[font=small,labelfont=bf]{caption}
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{myyellow}{rgb}{1.0, 1.0, 0.8}
+\usepackage{mathtools}
+\usepackage{multirow}
+\usepackage{comment}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage[normalem]{ulem}               % to striketrhourhg text
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\newcommand\redout{\bgroup\markoverwith
+{\textcolor{red}{\rule[0.5ex]{2pt}{0.8pt}}}\ULon}
+\renewcommand{\lstlistingname}{Código}% Listing -> Algorithm
+\renewcommand{\lstlistlistingname}{Lista de \lstlistingname s}% List of Listings -> List of Algorithms
+\usepackage{enumitem}
+\usepackage[top=3cm,left=2cm,bottom=2cm, right=2cm]{geometry}
+
+% Configuração para destacar a sintaxe do Python
+\lstset{ 
+    language=Python,                     % A linguagem do código
+    backgroundcolor=\color{myyellow}, % A cor do fundo 
+    basicstyle=\ttfamily\footnotesize,   % O estilo do texto básico
+    keywordstyle=\color{blue},           % Cor das palavras-chave
+    stringstyle=\color{red},             % Cor das strings
+    commentstyle=\color{mygreen},          % Cor dos comentários
+    numbers=left,                        % Números das linhas à esquerda
+    numberstyle=\tiny\color{gray},       % Estilo dos números das linhas
+    stepnumber=1,                        % Número de linhas entre os números das linhas
+    frame=single,                        % Moldura ao redor do código
+    breaklines=true,                     % Quebra automática das linhas longas
+    captionpos=t,                        % Posição da legenda
+    showstringspaces=false               % Não mostra espaços em branco nas strings
+    extendedchars=true,
+    literate={º}{{${ }^{\underline{o}}$}}1 {á}{{\'a}}1 {à}{{\`a}}1 {ã}{{\~a}}1 {é}{{\'e}}1 {É}{{\'E}}1 {ê}{{\^e}}1 {ë}{{\"e}}1 {í}{{\'i}}1 {ç}{{\c{c}}}1 {Ç}{{\c{C}}}1 {õ}{{\~o}}1 {ó}{{\'o}}1 {ô}{{\^o}}1 {ú}{{\'u}}1 {â}{{\^a}}1 {~}{{$\sim$}}1
+}
+
+
+\title{%
+\textbf{\huge Universidade Federal do Rio de Janeiro} \par
+\textbf{\LARGE Instituto Alberto Luiz Coimbra de Pós-Graduação e Pesquisa de Engenharia} \par
+\includegraphics[width=8cm]{COPPE UFRJ.png} \par
+
+\textbf{Departamento de Engenharia Elétrica} \par
+COE782 - Introdução ao Aprendizado de Máquina \par
+Prof. Dr. Markus Vinícius Santos Lima \par 
+
+\vspace{1\baselineskip}
+\textit{Lista 3 de exercícios}
+}
+
+\author{Luiz Henrique Souza Caldas\\email: lhscaldas@cos.ufrj.br}
+
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\newpage
+
+\include{ex_1}
+\include{ex_2}
+\include{codigos}
+
+
+
+\end{document}
