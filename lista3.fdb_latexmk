@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1718029196.29927 "c:/Users/lhsca/OneDrive/Documentos/Estudos/Mestrado/Disciplinas/Introdução ao Aprendizado de Máquina/Listas/Lista 3/lista3.tex" "lista3.pdf" "lista3" 1718029198.17495 0
+["pdflatex"] 1718060786.08358 "c:/Users/lhsca/OneDrive/Documentos/Estudos/Mestrado/Disciplinas/Introdução ao Aprendizado de Máquina/Listas/Lista 3/lista3.tex" "lista3.pdf" "lista3" 1718060788.28017 0
   "C:/Users/lhsca/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1717947796 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/lhsca/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk" 1715031816 14064 ce5bf0b601aeb0c6e36e13d6b50cb864 ""
   "C:/Users/lhsca/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1715008148 24240394 0e129e212a862dc916b90ad8e0b2ede1 ""
@@ -132,7 +132,6 @@
   "C:/Users/lhsca/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/lhsca/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1700127522 55487 80a65caedd3722f4c20a14a69e785d8f ""
   "COPPE UFRJ.png" 1715007025 119268 e8bfcfc0017d81dba38fe40f6f3d3998 ""
-  "E1.py" 1718028432 2958 b863dd7924ba21271e758612587f142c ""
   "E1_a.png" 1718028062 44780 028b5b568c9462e307991cb55b532e60 ""
   "E1_b.png" 1718028071 42379 d35f0f1f2979409d51c92e04a95d5262 ""
   "E1_c.png" 1718028077 42156 65fc06e9dcc7739059b1cdad4a38e5a1 ""
@@ -140,14 +139,16 @@
   "E1_f20.png" 1718028400 57953 5aa32a8769c9853c4b2d140d21ac7756 ""
   "E1_f50.png" 1718028446 59245 30b8dfab1f61f52576a8084c8fe66886 ""
   "c:/Users/lhsca/OneDrive/Documentos/Estudos/Mestrado/Disciplinas/Introdução ao Aprendizado de Máquina/Listas/Lista 3/lista3.tex" 1717947788 2851 fa2f43fa0d3a787da771ccf0464d0813 ""
-  "codigos.aux" 1718029197 933 9fe97594a26d725822a5d023d4ff6708 "pdflatex"
-  "codigos.tex" 1717950737 393 1883a8df2a3b7deb1d13a4229a3a2797 ""
-  "ex_1.aux" 1718029197 3064 85672a0f45c8241dc998c8e574fcb8d5 "pdflatex"
-  "ex_1.tex" 1718029193 7696 4186c8ed2caeca2ec05942f482c825ae ""
-  "ex_2.aux" 1718029197 906 9e26730370e7e7738d364ab2f4efd90f "pdflatex"
+  "codigos.aux" 1718060787 1066 faae7261505f999aa2487ec664c8a688 "pdflatex"
+  "codigos.tex" 1718059120 168 1df79748298c4ade895890626d2d9c9d ""
+  "ex_1.aux" 1718060787 3064 85672a0f45c8241dc998c8e574fcb8d5 "pdflatex"
+  "ex_1.py" 1718028432 2958 b863dd7924ba21271e758612587f142c ""
+  "ex_1.tex" 1718029204 7696 4186c8ed2caeca2ec05942f482c825ae ""
+  "ex_2.aux" 1718060787 906 9e26730370e7e7738d364ab2f4efd90f "pdflatex"
+  "ex_2.py" 1718060785 5543 08612c435f08038586ade31e04f6d05c ""
   "ex_2.tex" 1717943287 3656 b121a20c6c3d2e88b728f833b4664cce ""
-  "lista3.aux" 1718029197 323 e5b50588d491578b84067316c5435061 "pdflatex"
-  "lista3.out" 1718029197 1240 a72e452e74fa07d7ecdeb7366521c3dc "pdflatex"
+  "lista3.aux" 1718060787 323 f0f834f9a8bcb17e10eaa54dc5bfc4db "pdflatex"
+  "lista3.out" 1718060787 1240 a72e452e74fa07d7ecdeb7366521c3dc "pdflatex"
   "lista3.tex" 1717947788 2851 fa2f43fa0d3a787da771ccf0464d0813 ""
   (generated)
   "codigos.aux"

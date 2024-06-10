@@ -324,10 +324,13 @@ OUTPUT codigos.aux
 INPUT .\codigos.tex
 INPUT .\codigos.tex
 INPUT codigos.tex
-INPUT .\E1.py
-INPUT .\E1.py
+INPUT .\ex_1.py
+INPUT .\ex_1.py
 INPUT C:\Users\lhsca\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmtt10.tfm
-INPUT E1.py
+INPUT ex_1.py
+INPUT .\ex_2.py
+INPUT .\ex_2.py
+INPUT ex_2.py
 INPUT lista3.aux
 INPUT .\ex_1.aux
 INPUT .\ex_1.aux
