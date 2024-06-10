@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1718060786.08358 "c:/Users/lhsca/OneDrive/Documentos/Estudos/Mestrado/Disciplinas/Introdução ao Aprendizado de Máquina/Listas/Lista 3/lista3.tex" "lista3.pdf" "lista3" 1718060788.28017 0
+["pdflatex"] 1718061092.38326 "c:/Users/lhsca/OneDrive/Documentos/Estudos/Mestrado/Disciplinas/Introdução ao Aprendizado de Máquina/Listas/Lista 3/lista3.tex" "lista3.pdf" "lista3" 1718061094.50767 0
   "C:/Users/lhsca/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1717947796 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/lhsca/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk" 1715031816 14064 ce5bf0b601aeb0c6e36e13d6b50cb864 ""
   "C:/Users/lhsca/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1715008148 24240394 0e129e212a862dc916b90ad8e0b2ede1 ""
@@ -139,16 +139,16 @@
   "E1_f20.png" 1718028400 57953 5aa32a8769c9853c4b2d140d21ac7756 ""
   "E1_f50.png" 1718028446 59245 30b8dfab1f61f52576a8084c8fe66886 ""
   "c:/Users/lhsca/OneDrive/Documentos/Estudos/Mestrado/Disciplinas/Introdução ao Aprendizado de Máquina/Listas/Lista 3/lista3.tex" 1717947788 2851 fa2f43fa0d3a787da771ccf0464d0813 ""
-  "codigos.aux" 1718060787 1066 faae7261505f999aa2487ec664c8a688 "pdflatex"
+  "codigos.aux" 1718061094 1066 d1ecfdff3f40fc02c71abb8b8eb111ce "pdflatex"
   "codigos.tex" 1718059120 168 1df79748298c4ade895890626d2d9c9d ""
-  "ex_1.aux" 1718060787 3064 85672a0f45c8241dc998c8e574fcb8d5 "pdflatex"
+  "ex_1.aux" 1718061093 3064 85672a0f45c8241dc998c8e574fcb8d5 "pdflatex"
   "ex_1.py" 1718028432 2958 b863dd7924ba21271e758612587f142c ""
   "ex_1.tex" 1718029204 7696 4186c8ed2caeca2ec05942f482c825ae ""
-  "ex_2.aux" 1718060787 906 9e26730370e7e7738d364ab2f4efd90f "pdflatex"
-  "ex_2.py" 1718060785 5543 08612c435f08038586ade31e04f6d05c ""
+  "ex_2.aux" 1718061094 906 9e26730370e7e7738d364ab2f4efd90f "pdflatex"
+  "ex_2.py" 1718061089 5485 73024ccaa75c5c61c253e6c15e11cf6e ""
   "ex_2.tex" 1717943287 3656 b121a20c6c3d2e88b728f833b4664cce ""
-  "lista3.aux" 1718060787 323 f0f834f9a8bcb17e10eaa54dc5bfc4db "pdflatex"
-  "lista3.out" 1718060787 1240 a72e452e74fa07d7ecdeb7366521c3dc "pdflatex"
+  "lista3.aux" 1718061094 323 f0f834f9a8bcb17e10eaa54dc5bfc4db "pdflatex"
+  "lista3.out" 1718061094 1240 a72e452e74fa07d7ecdeb7366521c3dc "pdflatex"
   "lista3.tex" 1717947788 2851 fa2f43fa0d3a787da771ccf0464d0813 ""
   (generated)
   "codigos.aux"

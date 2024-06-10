@@ -8,7 +8,6 @@ import matplotlib.pyplot as plt
 
 # Carregar o dataset
 data = pd.read_csv('prostatedata.txt', delimiter='\t')
-# data = pd.read_csv('prostate_data.csv', delimiter=';')
 
 # (a) Padronização dos atributos de entrada para que eles tenham média 0 e variância 1
 features = ['lcavol', 'lweight', 'age', 'lbph', 'svi', 'lcp', 'gleason', 'pgg45']
