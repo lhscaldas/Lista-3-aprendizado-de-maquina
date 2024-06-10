@@ -49,23 +49,23 @@ A tabela abaixo exibindo os coeficientes para as três soluções permite compar
 \begin{table}[H]
 \caption{Coeficientes para $N=10$}
 \resizebox{\textwidth}{!}{
-\begin{tabular}{lllllllllll}
-    \toprule
-    Modelo & w0 & w1 & w2 & w3 & w4 & w5 & w6 & w7 & w8 & w9 \\
-    \midrule
-    LS & 0.00 & 33.81 & -652.62 & 5410.54 & -21973.73 & 48026.65 & -58345.99 & 37810.21 & -10973.23 & 664.37 \\     
-    Ridge & 0.00 & 8.87 & -14.84 & -21.96 & 25.51 & 24.50 & -3.61 & -23.28 & -16.17 & 21.04 \\
-    Lasso & 0.00 & 8.50 & -20.39 & 3.66 & 5.68 & 3.20 & 0.97 & -0.19 & -0.66 & -0.76 \\
-    \bottomrule
-\end{tabular}
+    \begin{tabular}{lllllllllll}
+        \toprule
+        Modelo & w0 & w1 & w2 & w3 & w4 & w5 & w6 & w7 & w8 & w9 \\
+        \midrule
+        LS & 0.00 & 61.35 & -1305.40 & 10864.20 & -43958.49 & 96013.73 & -116795.02 & 75859.90 & -22104.00 & 1363.74 \\
+        Ridge & 0.00 & 5.58 & -10.39 & -3.32 & 2.25 & 3.46 & 2.37 & 0.81 & -0.28 & -0.58 \\
+        Lasso & 0.00 & 7.87 & -18.23 & 2.99 & 5.02 & 2.16 & 0.11 & 0.00 & -0.00 & 0.09 \\
+        \bottomrule
+    \end{tabular}
 }
 \end{table}
 
-A regressão por mínimos quadrados sem regularização tende a produzir coeficientes maiores, um dos sinais que indicam overfitting ou pelo menos uma alta sensibilidade aos altos de treinamento. Enquanto que os coeficientes produzidos pela Ridge e pela Lasso são menores.
+A regressão por mínimos quadrados sem regularização tende a produzir coeficientes maiores, um dos sinais que indicam overfitting ou pelo menos uma alta sensibilidade aos dados de treinamento. Enquanto que os coeficientes produzidos pela Ridge e pela Lasso são menores.
 
-Além disso, é possível observar a presença de alguns coeficientes praticamente nulos para a Lasso. Esse resultado era esperado, uma vez que a Lasso, por utilizar a norma $L_1$, tende a produzir uma seleção mais esparsa, selecionando atributos mais importantes.
+Além disso, é possível observar a presença de alguns coeficientes praticamente nulos para a Lasso. Esse resultado era esperado, uma vez que a Lasso, por utilizar a norma $L_1$, tende a produzir uma solução mais esparsa, selecionando atributos mais importantes.
 
-Enquanto isso, a regressão Ridge, apesar de não selecionar atributos como a Lasso, tende a penalizar, e consequentemente reduzir, ainda mais os coeficientes grandes.
+Enquanto isso, a regressão Ridge, apesar de não selecionar atributos como a Lasso, tende a penalizar ainda mais os coeficientes grandes, consequentemente fazendo com que os maiores coeficientes fiquem menores que os produzidos pela Lasso.
 
 
 
@@ -90,9 +90,9 @@ Enquanto isso, a regressão Ridge, apesar de não selecionar atributos como a La
             \toprule
             Modelo & w0 & w1 & w2 & w3 & w4 & w5 & w6 & w7 & w8 & w9 \\
             \midrule
-            LS & 0.00 & 0.13 & 133.29 & -1042.60 & 3592.94 & -6598.01 & 6040.15 & -1620.50 & -1137.52 & 631.65 \\
-            Ridge & 0.00 & 7.94 & -10.61 & -17.66 & 2.91 & 14.55 & 13.52 & 4.83 & -5.11 & -10.82 \\
-            Lasso & 0.00 & 11.00 & -26.25 & 2.05 & 8.34 & 7.01 & 3.69 & 0.35 & -2.11 & -4.36 \\
+            LS & 0.00 & -6.01 & 266.50 & -2042.90 & 7178.62 & -13245.77 & 11993.84 & -3017.56 & -2424.09 & 1296.42 \\
+            Ridge & 0.00 & 8.39 & -16.21 & -8.40 & 2.98 & 9.30 & 9.76 & 5.62 & -1.60 & -10.66 \\
+            Lasso & 0.00 & 12.42 & -29.59 & 0.72 & 10.39 & 8.98 & 4.55 & 0.00 & -1.36 & -6.72 \\
             \bottomrule
         \end{tabular}
     }
@@ -106,17 +106,23 @@ Enquanto isso, a regressão Ridge, apesar de não selecionar atributos como a La
 \begin{table}[H]
     \caption{Coeficientes para $N=50$}
     \resizebox{\textwidth}{!}{
-    \begin{tabular}{lllllllllll}
-        \toprule
-        Modelo & w0 & w1 & w2 & w3 & w4 & w5 & w6 & w7 & w8 & w9 \\
-        \midrule
-        LS & 0.00 & -0.06 & 228.03 & -2656.39 & 13838.07 & -40023.24 & 67930.77 & -67287.01 & 36037.64 & -8068.26 \\    
-        Ridge & 0.00 & 8.06 & -23.82 & 17.17 & -5.30 & -8.80 & 5.11 & 16.26 & 10.42 & -19.44 \\
-        Lasso & 0.00 & 7.42 & -18.67 & 1.59 & 5.49 & 4.71 & 2.67 & 0.51 & -1.09 & -2.90 \\
-        \bottomrule
-    \end{tabular}
+        \begin{tabular}{lllllllllll}
+            \toprule
+            Modelo & w0 & w1 & w2 & w3 & w4 & w5 & w6 & w7 & w8 & w9 \\
+            \midrule
+            LS & 0.00 & -6.39 & 455.99 & -5270.52 & 27669.17 & -80097.05 & 135776.46 & -134351.92 & 71926.94 & -16103.56 \\
+            Ridge & 0.00 & 4.21 & -10.54 & -3.23 & 1.84 & 4.62 & 5.21 & 3.53 & -0.31 & -6.02 \\
+            Lasso & 0.00 & 5.12 & -14.48 & 0.36 & 4.73 & 4.19 & 2.22 & 0.00 & -0.00 & -2.74 \\
+            \bottomrule
+        \end{tabular}
     }
 \end{table}
+
+Pelas figuras, podemos observar que a solução para mínimos quadrados começa a sofrer menos com o overfitting à medida que o tamanho da amostra aumenta. Isso se deve ao fato de que o ruído nos dados de treinamento possui uma distribuição gaussiana com média zero. Pela lei dos grandes números, quanto maior a quantidade de dados de treinamento, mais a média da amostra se aproxima da média da distribuição original, que é zero, reduzindo assim o efeito do ruído.
+
+Consequentemente, com mais dados, a solução de mínimos quadrados consegue capturar melhor o padrão subjacente dos dados, e o impacto do ruído diminui. Esse comportamento explica por que a solução de mínimos quadrados apresenta um ajuste mais estável e menos propenso ao overfitting quando o tamanho da amostra aumenta.
+
+No entanto, é importante notar que, mesmo com um aumento no tamanho da amostra, métodos de regularização como a regressão ridge e lasso continuam a fornecer soluções mais robustas e generalizáveis, especialmente em situações onde o ruído pode não ser perfeitamente gaussiano ou quando a complexidade do modelo ainda é alta em relação ao tamanho da amostra.
 
 
 
