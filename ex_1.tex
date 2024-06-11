@@ -47,18 +47,24 @@ A regressão Lasso, assim como a Ridge, introduz uma penalização nos coeficien
 A tabela abaixo exibindo os coeficientes para as três soluções permite comparar diretamente o impacto da regularização nos coeficientes.
 
 \begin{table}[H]
-\caption{Coeficientes para $N=10$}
-\resizebox{\textwidth}{!}{
-    \begin{tabular}{lllllllllll}
+    \caption{Coeficientes para $N=10$}
+    \centering
+    \begin{tabular}{|l|lll|}
         \toprule
-        Modelo & w0 & w1 & w2 & w3 & w4 & w5 & w6 & w7 & w8 & w9 \\
+        Modelo & LS & Ridge & Lasso \\
         \midrule
-        LS & 0.00 & 61.35 & -1305.40 & 10864.20 & -43958.49 & 96013.73 & -116795.02 & 75859.90 & -22104.00 & 1363.74 \\
-        Ridge & 0.00 & 5.58 & -10.39 & -3.32 & 2.25 & 3.46 & 2.37 & 0.81 & -0.28 & -0.58 \\
-        Lasso & 0.00 & 7.87 & -18.23 & 2.99 & 5.02 & 2.16 & 0.11 & 0.00 & -0.00 & 0.09 \\
+        $w_0$ & 0.00000 & 0.00000 & 0.00000 \\
+        $w_1$ & 61.35162 & 5.57635 & 7.87333 \\
+        $w_2$ & -1305.39950 & -10.39014 & -18.23029 \\
+        $w_3$ & 10864.20021 & -3.32097 & 2.98646 \\
+        $w_4$ & -43958.48661 & 2.24588 & 5.01574 \\
+        $w_5$ & 96013.72998 & 3.46376 & 2.15551 \\
+        $w_6$ & -116795.01934 & 2.37258 & 0.11133 \\
+        $w_7$ & 75859.90079 & 0.81213 & 0.00000 \\
+        $w_8$ & -22103.99856 & -0.27544 & -0.00000 \\
+        $w_9$ & 1363.74433 & -0.58096 & 0.08759 \\
         \bottomrule
     \end{tabular}
-}
 \end{table}
 
 A regressão por mínimos quadrados sem regularização tende a produzir coeficientes maiores, um dos sinais que indicam overfitting ou pelo menos uma alta sensibilidade aos dados de treinamento. Enquanto que os coeficientes produzidos pela Ridge e pela Lasso são menores.
@@ -85,38 +91,53 @@ Enquanto isso, a regressão Ridge, apesar de não selecionar atributos como a La
 \end{figure}
 \begin{table}[H]
     \caption{Coeficientes para $N=20$}
-    \resizebox{\textwidth}{!}{
-        \begin{tabular}{lllllllllll}
+    \centering
+        \begin{tabular}{|l|lll|}
             \toprule
-            Modelo & w0 & w1 & w2 & w3 & w4 & w5 & w6 & w7 & w8 & w9 \\
+            Modelo & LS & Ridge & Lasso \\
             \midrule
-            LS & 0.00 & -6.01 & 266.50 & -2042.90 & 7178.62 & -13245.77 & 11993.84 & -3017.56 & -2424.09 & 1296.42 \\
-            Ridge & 0.00 & 8.39 & -16.21 & -8.40 & 2.98 & 9.30 & 9.76 & 5.62 & -1.60 & -10.66 \\
-            Lasso & 0.00 & 12.42 & -29.59 & 0.72 & 10.39 & 8.98 & 4.55 & 0.00 & -1.36 & -6.72 \\
+            $w_0$ & 0.00000 & 0.00000 & 0.00000 \\      
+            $w_1$ & -6.01368 & 8.39435 & 12.41611 \\    
+            $w_2$ & 266.50406 & -16.21245 & -29.59271 \\
+            $w_3$ & -2042.90037 & -8.39927 & 0.72172 \\ 
+            $w_4$ & 7178.62334 & 2.98152 & 10.38544 \\  
+            $w_5$ & -13245.77187 & 9.30126 & 8.97546 \\ 
+            $w_6$ & 11993.83639 & 9.76174 & 4.54743 \\
+            $w_7$ & -3017.56404 & 5.62434 & 0.00000 \\
+            $w_8$ & -2424.08815 & -1.60172 & -1.35976 \\
+            $w_9$ & 1296.42241 & -10.65716 & -6.72254 \\
             \bottomrule
         \end{tabular}
-    }
 \end{table}
+
 
 \begin{figure}[H]
     \centering
     \caption{Comparação entre as soluções para $N=50$}
     \includegraphics[width=12cm]{E1_f50.png}
 \end{figure}
+
 \begin{table}[H]
     \caption{Coeficientes para $N=50$}
-    \resizebox{\textwidth}{!}{
-        \begin{tabular}{lllllllllll}
+    \centering
+        \begin{tabular}{|l|lll|}
             \toprule
-            Modelo & w0 & w1 & w2 & w3 & w4 & w5 & w6 & w7 & w8 & w9 \\
+            Modelo & LS & Ridge & Lasso \\
             \midrule
-            LS & 0.00 & -6.39 & 455.99 & -5270.52 & 27669.17 & -80097.05 & 135776.46 & -134351.92 & 71926.94 & -16103.56 \\
-            Ridge & 0.00 & 4.21 & -10.54 & -3.23 & 1.84 & 4.62 & 5.21 & 3.53 & -0.31 & -6.02 \\
-            Lasso & 0.00 & 5.12 & -14.48 & 0.36 & 4.73 & 4.19 & 2.22 & 0.00 & -0.00 & -2.74 \\
+            $w_0$ & 0.00000 & 0.00000 & 0.00000 \\
+            $w_1$ & -6.39374 & 4.21035 & 5.11672 \\
+            $w_2$ & 455.99223 & -10.53780 & -14.48266 \\
+            $w_3$ & -5270.52166 & -3.22874 & 0.35582 \\
+            $w_4$ & 27669.16750 & 1.83804 & 4.73458 \\
+            $w_5$ & -80097.04531 & 4.61815 & 4.18727 \\
+            $w_6$ & 135776.45582 & 5.20904 & 2.22228 \\
+            $w_7$ & -134351.92251 & 3.52870 & 0.00000 \\
+            $w_8$ & 71926.93850 & -0.30771 & -0.00000 \\
+            $w_9$ & -16103.55817 & -6.01761 & -2.73785 \\
             \bottomrule
         \end{tabular}
-    }
 \end{table}
+
 
 Pelas figuras, podemos observar que a solução para mínimos quadrados começa a sofrer menos com o overfitting à medida que o tamanho da amostra aumenta. Isso se deve ao fato de que o ruído nos dados de treinamento possui uma distribuição gaussiana com média zero. Pela lei dos grandes números, quanto maior a quantidade de dados de treinamento, mais a média da amostra se aproxima da média da distribuição original, que é zero, reduzindo assim o efeito do ruído.
 

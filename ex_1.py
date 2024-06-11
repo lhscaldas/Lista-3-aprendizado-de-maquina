@@ -54,16 +54,19 @@ def listar_coefs(coef_list):
     model_names = ['LS', 'Ridge', 'Lasso']
 
     coef_dict = {'Modelo': model_names}
-    for i in range(10):  # assumindo que existem 10 coeficientes
-        coef_dict[f'w{i}'] = [f'{coef[i]:.2f}' for coef in coef_list]
+    for i in range(10):
+        coef_dict[f'$w_{i}$'] = [f'{coef[i]:.5f}' for coef in coef_list]
 
     coef_table = pd.DataFrame(coef_dict)
-    print(coef_table.to_latex(index=False))
+    coef_table = coef_table.set_index('Modelo').transpose()
+    print(coef_table.to_latex(index=True))
+
+
     
 if __name__=="__main__":
     # amostra
     np.random.seed(42) # congelando a seed para gerar os mesmos dados de treinamento para todos os itens 
-    N = 50 # tamanho da amostra
+    N = 10 # tamanho da amostra
     x = np.linspace(0,1,N)
     t = np.sin(2*np.pi*x) + np.random.normal(0, 0.5, size=N)
     # curve fitting
@@ -78,7 +81,7 @@ if __name__=="__main__":
         y, w = fitar_curva(x, t, model)
         y_list.append(y)
         w_list.append(w)
-        # plotar_curva(x,y,model)
+        plotar_curva(x,y,model)
 
     listar_coefs(w_list)
     plotar_tudo(x,y_list,modelos,N)

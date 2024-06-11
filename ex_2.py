@@ -53,25 +53,25 @@ print(f'MSE - Teste (Lasso): {mse_test_lasso}')
 
 # (e) Aplicação do k-fold cross-validation para selecionar o melhor valor de lambda
 def plot_cv_curve(model, X, y, lambdas, model_name):
-    # lambdas = np.linspace(0,0.5,200)
-    kf = KFold(n_splits=10, shuffle=True, random_state=1)
+    # kf = KFold(n_splits=10, shuffle=True, random_state=1)
     mean_scores = list()
     std_scores = list()
     for alpha in lambdas:
         model.alpha = alpha
         scores_one_alpha = list() 
-        for _ in range(1):
-            scores = cross_val_score(model, X, y, cv=kf, scoring='neg_mean_squared_error')
-            scores_one_alpha.append(scores)
+        for i in range(1):
+            kf = KFold(n_splits=10, shuffle=True, random_state=i)
+            scores = cross_val_score(model, X, y, cv=10, scoring='neg_mean_squared_error')
+            scores_one_alpha.append(-scores)
         scores_one_alpha = np.array(scores_one_alpha)
-        mean_scores.append(-scores_one_alpha.mean())
-        std_scores.append(scores_one_alpha.std())   
+        mean_scores.append(scores_one_alpha.mean())
+        std_scores.append(scores_one_alpha.std())
     mean_scores = np.array(mean_scores)
     std_scores = np.array(std_scores)
     plt.figure()
-    plt.plot(np.log10(lambdas), mean_scores, label=f'{model_name} Mean CV MSE')
-    plt.fill_between(np.log10(lambdas), mean_scores - std_scores, mean_scores + std_scores, alpha=0.2)
-    plt.xlabel('Log10(Lambda)')
+    plt.plot(lambdas, mean_scores, label=f'{model_name} Mean CV MSE')
+    # plt.fill_between(lambdas, mean_scores - std_scores, mean_scores + std_scores, alpha=0.2)
+    plt.xlabel('Lambda')
     plt.ylabel('Mean CV MSE')
     plt.title(f'{model_name} Cross-Validation Curve')
     plt.legend()
@@ -81,8 +81,8 @@ def plot_cv_curve(model, X, y, lambdas, model_name):
     lambda_1se = lambdas[np.where(mean_scores <= min_score + std_scores[np.argmin(mean_scores)])[0][-1]]
     return lambda_1se
 
-best_lambda_ridge = plot_cv_curve(Ridge(), X_train, y_train, np.logspace(0, 2, 100), 'Ridge')
-best_lambda_lasso = plot_cv_curve(Lasso(), X_train, y_train, np.logspace(-2, 0, 100), 'Lasso')
+best_lambda_ridge = plot_cv_curve(Ridge(), X_train, y_train, np.linspace(0,5,100), 'Ridge')
+best_lambda_lasso = plot_cv_curve(Lasso(), X_train, y_train, np.linspace(0, 0.01, 100), 'Lasso')
 print(f'Best lambda (Ridge): {best_lambda_ridge}')
 print(f'Best lambda (Lasso): {best_lambda_lasso}')
 
