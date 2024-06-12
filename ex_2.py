@@ -55,12 +55,13 @@ print(f'MSE - Teste (Lasso): {mse_test_lasso}')
 
 # (e) Aplicação do k-fold cross-validation para selecionar o melhor valor de lambda
 def plot_cv_curve(model, X, y, lambdas, model_name):
+    # k-fold cross-validation
     mean_scores = list()
     std_scores = list()
     for alpha in lambdas:
         model.alpha = alpha
         scores_one_alpha = list() 
-        for i in range(30):
+        for i in range(1):
             kf = KFold(n_splits=10, shuffle=True, random_state=i)
             scores = cross_val_score(model, X, y, cv=kf, scoring='neg_mean_squared_error')
             scores_one_alpha.append(-scores)
@@ -69,17 +70,24 @@ def plot_cv_curve(model, X, y, lambdas, model_name):
         std_scores.append(scores_one_alpha.std())
     mean_scores = np.array(mean_scores)
     std_scores = np.array(std_scores)
-    plt.figure()
-    plt.plot(lambdas, mean_scores, label=f'{model_name} Mean CV MSE')
-    plt.fill_between(lambdas, mean_scores - std_scores, mean_scores + std_scores, alpha=0.2)
-    plt.xlabel('Lambda')
-    plt.ylabel('Mean CV MSE')
-    plt.title(f'{model_name} Cross-Validation Curve')
-    plt.legend()
-    plt.show()
     # Regra de 1 desvio padrão
     min_score = np.min(mean_scores)
-    lambda_1se = lambdas[np.where(mean_scores <= min_score + std_scores[np.argmin(mean_scores)])[0][-1]]
+    min_score_index = np.where(mean_scores == min_score)
+    min_score_std = std_scores[min_score_index]
+    min_score_lambda = lambdas[min_score_index]
+    lambda_1se_index = np.where(mean_scores <= min_score + min_score_std)[0][-1]
+    lambda_1se = lambdas[lambda_1se_index]
+    lambda_1se_score = mean_scores[lambda_1se_index]
+    # plot
+    plt.figure()
+    plt.plot(lambdas, mean_scores, label=f'MSE ({model_name})')
+    plt.scatter(min_score_lambda, min_score, c='r', label='Menor score', zorder=3)
+    plt.scatter(lambda_1se, lambda_1se_score, c='g', label='Melhor lambda', zorder=3)
+    plt.xlabel('Lambda')
+    plt.ylabel('CV MSE')
+    plt.title(f'Curva de Validação Cruzada do {model_name}')
+    plt.legend()
+    plt.show()
     return lambda_1se
 
 best_lambda_ridge = plot_cv_curve(Ridge(), X_train, y_train, np.logspace(-2,1.3,50), 'Ridge')
