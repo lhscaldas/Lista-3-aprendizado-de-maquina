@@ -1,10 +1,11 @@
 import pandas as pd
 import numpy as np
 from sklearn.linear_model import LinearRegression, Ridge, Lasso
-from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import StandardScaler, PolynomialFeatures
 from sklearn.model_selection import train_test_split, cross_val_score, KFold
-from sklearn.metrics import mean_squared_error
+from sklearn.metrics import mean_squared_error, make_scorer
 import matplotlib.pyplot as plt
+from sklearn.pipeline import Pipeline
 
 # Carregar o dataset
 # data = pd.read_csv('prostatedata.txt', delimiter='\t')
@@ -54,25 +55,20 @@ print(f'MSE - Treinamento (Lasso): {mse_train_lasso}')
 print(f'MSE - Teste (Lasso): {mse_test_lasso}')
 
 # (e) Aplicação do k-fold cross-validation para selecionar o melhor valor de lambda
-def plot_cv_curve(model, X, y, lambdas, model_name):
+def plot_cv_curve(model_class, X, y, lambdas, model_name):
     # k-fold cross-validation
     mean_scores = list()
     std_scores = list()
+    kf = KFold(n_splits=10, shuffle=True, random_state=3)
     for alpha in lambdas:
-        model.alpha = alpha
-        scores_one_alpha = list() 
-        for i in range(1):
-            kf = KFold(n_splits=10, shuffle=True, random_state=i)
-            scores = cross_val_score(model, X, y, cv=kf, scoring='neg_mean_squared_error')
-            scores_one_alpha.append(-scores)
-        scores_one_alpha = np.array(scores_one_alpha)
-        mean_scores.append(scores_one_alpha.mean())
-        std_scores.append(scores_one_alpha.std())
+        scores = cross_val_score(model_class(alpha=alpha), X, y, cv=kf, scoring='neg_mean_squared_error')
+        mean_scores.append(-scores.mean())
+        std_scores.append(scores.std())
     mean_scores = np.array(mean_scores)
     std_scores = np.array(std_scores)
     # Regra de 1 desvio padrão
     min_score = np.min(mean_scores)
-    min_score_index = np.where(mean_scores == min_score)
+    min_score_index = np.argmin(mean_scores)
     min_score_std = std_scores[min_score_index]
     min_score_lambda = lambdas[min_score_index]
     lambda_1se_index = np.where(mean_scores <= min_score + min_score_std)[0][-1]
@@ -81,17 +77,21 @@ def plot_cv_curve(model, X, y, lambdas, model_name):
     # plot
     plt.figure()
     plt.plot(lambdas, mean_scores, label=f'MSE ({model_name})')
-    plt.scatter(min_score_lambda, min_score, c='r', label='Menor score', zorder=3)
     plt.scatter(lambda_1se, lambda_1se_score, c='g', label='Melhor lambda', zorder=3)
+    plt.fill_between(lambdas, min_score - min_score_std, min_score + min_score_std, alpha=0.2, label='Faixa para buscar o lambda')
+    plt.errorbar(min_score_lambda, min_score, yerr=min_score_std, fmt='o', color='r', label='Menor score e seu desvio padrão')
+
     plt.xlabel('Lambda')
+    # plt.xscale('log')
     plt.ylabel('CV MSE')
     plt.title(f'Curva de Validação Cruzada do {model_name}')
     plt.legend()
     plt.show()
     return lambda_1se
 
-best_lambda_ridge = plot_cv_curve(Ridge(), X_train, y_train, np.logspace(-2,1.3,50), 'Ridge')
-best_lambda_lasso = plot_cv_curve(Lasso(), X_train, y_train, np.logspace(-3,-1.4,50), 'Lasso')
+best_lambda_ridge = plot_cv_curve(Ridge, X_train, y_train, np.linspace(0.0001,200,100), 'Ridge')
+best_lambda_lasso = plot_cv_curve(Lasso, X_train, y_train, np.linspace(0.0001,0.5,100), 'Lasso')
+
 print(f'Best lambda (Ridge): {best_lambda_ridge}')
 print(f'Best lambda (Lasso): {best_lambda_lasso}')
 

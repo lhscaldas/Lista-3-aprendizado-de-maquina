@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1718149506.93482 "c:/Users/lhsca/OneDrive/Documentos/Estudos/Mestrado/Disciplinas/Introdução ao Aprendizado de Máquina/Listas/Lista 3/lista3.tex" "lista3.pdf" "lista3" 1718149509.17935 0
+["pdflatex"] 1718290196.2446 "c:/Users/lhsca/OneDrive/Documentos/Estudos/Mestrado/Disciplinas/Introdução ao Aprendizado de Máquina/Listas/Lista 3/lista3.tex" "lista3.pdf" "lista3" 1718290198.48065 0
   "C:/Users/lhsca/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1717947796 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/lhsca/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk" 1715031816 14064 ce5bf0b601aeb0c6e36e13d6b50cb864 ""
   "C:/Users/lhsca/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tctt1000.pk" 1717464288 9492 026de875504cd60ac08faf11d3ad3411 ""
@@ -142,17 +142,17 @@
   "E1_f20.png" 1718028400 57953 5aa32a8769c9853c4b2d140d21ac7756 ""
   "E1_f50.png" 1718028446 59245 30b8dfab1f61f52576a8084c8fe66886 ""
   "c:/Users/lhsca/OneDrive/Documentos/Estudos/Mestrado/Disciplinas/Introdução ao Aprendizado de Máquina/Listas/Lista 3/lista3.tex" 1717947788 2851 fa2f43fa0d3a787da771ccf0464d0813 ""
-  "codigos.aux" 1718149508 1067 7ab604f72b323f8a73d2f6794a67c31e "pdflatex"
+  "codigos.aux" 1718290198 1067 7ab604f72b323f8a73d2f6794a67c31e "pdflatex"
   "codigos.tex" 1718059120 168 1df79748298c4ade895890626d2d9c9d ""
-  "ex_1.aux" 1718149508 3064 efda6c22c09a7990a07598e668b39c7c "pdflatex"
+  "ex_1.aux" 1718290197 3064 efda6c22c09a7990a07598e668b39c7c "pdflatex"
   "ex_1.py" 1718133304 2982 5d6562afe45d24a55fbc6d651eb174bf ""
   "ex_1.tex" 1718133175 8252 dfb50f1d6891beb6db61aef21ea45f8e ""
-  "ex_2.aux" 1718149508 2311 b1cc799fbbd248ff0988357df545e401 "pdflatex"
-  "ex_2.py" 1718149503 6158 d618491721a08bc53e002ae580d25202 ""
-  "ex_2.tex" 1718131702 7221 c233d4275c451b44898bba96e7c6efc1 ""
+  "ex_2.aux" 1718290197 2311 b1cc799fbbd248ff0988357df545e401 "pdflatex"
+  "ex_2.py" 1718290192 6229 eda5c260573b8cba6df2bc3170601e8f ""
+  "ex_2.tex" 1718283415 7257 4a62208553f6fa3e099984aceeef5deb ""
   "lasso.png" 1718137757 29869 c20d8d70ce5176e1a856ec62d0fef5e1 ""
-  "lista3.aux" 1718149508 323 9a13ba4a8cd324e701de3c4aef23f66d "pdflatex"
-  "lista3.out" 1718149508 2502 f0d40b0d2a4e4cd527c8d5eecdb3c13e "pdflatex"
+  "lista3.aux" 1718290198 323 9a13ba4a8cd324e701de3c4aef23f66d "pdflatex"
+  "lista3.out" 1718290198 2502 f0d40b0d2a4e4cd527c8d5eecdb3c13e "pdflatex"
   "lista3.tex" 1717947788 2851 fa2f43fa0d3a787da771ccf0464d0813 ""
   "ridge.png" 1718137724 31829 44aeec3e343cc67e9ca4b0eb567d5c2b ""
   (generated)
