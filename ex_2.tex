@@ -35,12 +35,14 @@ O dataset foi dividido utilizando a última coluna (T = treinamento, F = teste),
 
 \subsection{Resposta do item (c)}
 Para implementar o método dos mínimos quadrados foi utilizada a classe $LinearRegression$ da biblioteca  \textit{sklearn} para \textit{python}.
-Pelo critério de mínimos quadrados (LS) foram obtidos os seguintes resultados ao se calcular o erro quadrático médio:
+Pelo critério de mínimos quadrados (LS) foram obtidos os seguintes resultados ao se calcular o erro quadrático médio (MSE):
 
 \begin{itemize}
     \item MSE - Treinamento (LS): 0.4391997680583344
     \item  MSE - Teste (LS): 0.5212740055076001
 \end{itemize}
+
+O modelo de mínimos quadrados (LS) foi ajustado e apresentou um erro quadrático médio (MSE) de 0.4392 no conjunto de treinamento e 0.5213 no conjunto de teste. A diferença entre os MSE sugere que o modelo tem uma boa capacidade de generalização, mas há espaço para melhoria, possivelmente através de regularização.
 
 
 \subsection{Resposta do item (d)}
@@ -54,6 +56,8 @@ Foram obtidos os seguintes reesultados para cada método ao se calcular o erro q
     \item MSE - Teste (Lasso): 0.5031909828714028
 \end{itemize}
 
+O Ridge apresentou MSE de 0.4392 (treinamento) e 0.5189 (teste), enquanto o Lasso apresentou MSE de 0.6207 (treinamento) e 0.5032 (teste). Os resultados indicam que o Lasso, apesar de ter um MSE de treinamento mais alto, generaliza melhor para o conjunto de teste do que o Ridge para este valor de $\lambda$.
+
 \subsection{Resposta do item (e)}
 Para implementar o k-fold cross-validation foi utilizada a classe $KFold$ e o método $cross_val_score$ da biblioteca \textit{sklearn} para \textit{python}, utilizando $k=10$.
 As curvas abaixo mostram os resultados para os dois métodos:
@@ -65,7 +69,7 @@ As curvas abaixo mostram os resultados para os dois métodos:
 \end{figure}
 
 \begin{itemize}
-    \item Best lambda (Ridge): 284.8035868435802
+    \item Melhor lambda (Ridge):  56.56570000000001
 \end{itemize}
 
 \begin{figure}[H]
@@ -75,16 +79,20 @@ As curvas abaixo mostram os resultados para os dois métodos:
 \end{figure}
 
 \begin{itemize}
-    \item Best lambda (Lasso): 0.4750810162102798
+    \item Melhor lambda (Lasso): 0.17178282828282826
 \end{itemize}
+
+O melhor $\lambda$ para Ridge foi 56.5657 e para Lasso foi 0.1718. Isso mostra a importância da validação cruzada para selecionar o hiperparâmetro $\lambda$, que controla o grau de regularização, melhorando a capacidade de generalização dos modelos.
 
 \subsection{Resposta do item (f)}
 Utilizando os valores de $\lambda$ obtidos no item (e) para treinar os modelos e avaliando eles no conjunto de teste, foram obtidos os seguintes resultados:
 
 \begin{itemize}
-    \item MSE - Teste (Final Ridge): 0.6757602963351064
-    \item MSE - Teste (Final Lasso): 0.6427793406214352
+    \item MSE - Teste (Final Ridge): 0.5168573674734896
+    \item MSE - Teste (Final Lasso): 0.46269599870385136
 \end{itemize}
+
+Os modelos Ridge e Lasso ajustados com os melhores valores de $\lambda$ apresentaram MSE no conjunto de teste de 0.5169 e 0.4627, respectivamente. O Lasso, com $\lambda$ selecionado pela validação cruzada, teve o menor MSE no conjunto de teste, indicando melhor performance de generalização e sugerindo que ele é mais adequado para este problema específico, o que pode ser explicado pela capacidade do Lasso de realizar a seleção de atributos, na qual ele zera o peso de atributos considerados menos importantes durante o treinamento do modelo.
 
 \subsection{Resposta do item (g) (bônus)}
 Estimando-se o desvio padrão dos modelos utilizando o método de bootstrap, como explicado no slide fornecido, foram obtidos os seguintes resultados:
@@ -96,17 +104,20 @@ Estimando-se o desvio padrão dos modelos utilizando o método de bootstrap, com
             \toprule
             Coeficiente & LS & Ridge & Lasso \\
             \midrule
-            $\sigma(w_{lcavol})$ & 1.13557895 & 0.02041017 & 0.00122013 \\
-            $\sigma(w_{lweight})$ & 0.61004347 & 0.02223836 & 0. \\
-            $\sigma(w_{age})$ & 1.4497133 & 0.02089434 & 0. \\
-            $\sigma(w_{lbph})$ & 0.80596082 & 0.02063686 & 0. \\
-            $\sigma(w_{svi})$ & 1.20836005 & 0.02081217 & 0. \\
-            $\sigma(w_{lcp})$ & 2.91104245 & 0.01875707 & 0. \\
-            $\sigma(w_{gleason})$ & 1.33500253 & 0.01904607 & 0. \\
-            $\sigma(w_{pgg45})$ & 1.21153016 & 0.019532 & 0. \\
+            $\sigma(w_{lcavol})$ & 0.88759121 & 0.05376307 & 0.02682624 \\
+            $\sigma(w_{lweight})$ & 0.49864616 & 0.0616933 & 0.0177683 \\
+            $\sigma(w_{age})$ & 0.83638015 & 0.05619426 & 0.0135523 \\
+            $\sigma(w_{lbph})$ & 1.50354526 & 0.05841666 & 0.00873325 \\
+            $\sigma(w_{svi})$ & 1.29119818 & 0.05347875 & 0.01242236 \\
+            $\sigma(w_{lcp})$ & 1.41932171 & 0.05059043 & 0.01094835 \\
+            $\sigma(w_{gleason})$ & 1.14078834 & 0.05271173 & 0.00885585 \\
+            $\sigma(w_{pgg45})$ & 1.4496714 & 0.04933459 & 0.01082586 \\
             \bottomrule
         \end{tabular}
 \end{table}
+
+
+A estimação do desvio padrão dos coeficientes utilizando o método de bootstrap mostrou que o Lasso resulta em coeficientes com menor variabilidade comparado aos métodos LS e Ridge. Isso sugere que o Lasso, além de promover sparsidade (coeficientes nulos), também pode proporcionar coeficientes mais estáveis, o que pode ser uma vantagem em termos de interpretabilidade e robustez do modelo.
 
 
 

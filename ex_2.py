@@ -69,7 +69,7 @@ def plot_cv_curve(model_class, X, y, lambdas, model_name):
     # Regra de 1 desvio padrão
     min_score = np.min(mean_scores)
     min_score_index = np.argmin(mean_scores)
-    min_score_std = std_scores[min_score_index]
+    min_score_std = std_scores[min_score_index]/np.sqrt(10)
     min_score_lambda = lambdas[min_score_index]
     lambda_1se_index = np.where(mean_scores <= min_score + min_score_std)[0][-1]
     lambda_1se = lambdas[lambda_1se_index]
@@ -89,11 +89,11 @@ def plot_cv_curve(model_class, X, y, lambdas, model_name):
     plt.show()
     return lambda_1se
 
-best_lambda_ridge = plot_cv_curve(Ridge, X_train, y_train, np.linspace(0.0001,200,100), 'Ridge')
+best_lambda_ridge = plot_cv_curve(Ridge, X_train, y_train, np.linspace(0.0001,100,100), 'Ridge')
 best_lambda_lasso = plot_cv_curve(Lasso, X_train, y_train, np.linspace(0.0001,0.5,100), 'Lasso')
 
-print(f'Best lambda (Ridge): {best_lambda_ridge}')
-print(f'Best lambda (Lasso): {best_lambda_lasso}')
+print(f'Melhor lambda (Ridge): {best_lambda_ridge}')
+print(f'Melhor lambda (Lasso): {best_lambda_lasso}')
 
 # (f) Calculando o MSE para o conjunto de teste
 final_ridge_model = Ridge(alpha=best_lambda_ridge)

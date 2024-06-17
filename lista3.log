@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.5.6)  13 JUN 2024 11:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.5.6)  17 JUN 2024 20:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -595,17 +595,16 @@ Overfull \hbox (11.82227pt too wide) in paragraph at lines 6--7
 
 
 
-]
-<ridge.png, id=154, 462.528pt x 346.896pt>
+] [10]
+<ridge.png, id=161, 462.528pt x 346.896pt>
 File: ridge.png Graphic file (type png)
 <use ridge.png>
-Package pdftex.def Info: ridge.png  used on input line 64.
+Package pdftex.def Info: ridge.png  used on input line 68.
 (pdftex.def)             Requested size: 341.43306pt x 256.08499pt.
- [10]
 <lasso.png, id=162, 462.528pt x 346.896pt>
 File: lasso.png Graphic file (type png)
 <use lasso.png>
-Package pdftex.def Info: lasso.png  used on input line 74.
+Package pdftex.def Info: lasso.png  used on input line 78.
 (pdftex.def)             Requested size: 341.43306pt x 256.08499pt.
  [11 <./ridge.png>] [12 <./lasso.png>]) [13]
 \openout2 = `codigos.aux'.
@@ -629,15 +628,15 @@ Package rerunfilecheck Info: File `lista3.out' has not changed.
 (rerunfilecheck)             Checksum: F0D40B0D2A4E4CD527C8D5EECDB3C13E;2502.
  ) 
 Here is how much of TeX's memory you used:
- 16689 strings out of 474369
- 269790 string characters out of 5740515
+ 16690 strings out of 474369
+ 269799 string characters out of 5740515
  2412754 words of memory out of 5000000
- 38564 multiletter control sequences out of 15000+600000
+ 38565 multiletter control sequences out of 15000+600000
  571694 words of font info for 88 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,11n,79p,1112b,2268s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,11n,79p,1112b,2270s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\lhsca\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tctt1000.pk> <C:\Users\lhsca\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/lhsca/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/lhsca/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/lhsca/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/lhsca/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/lhsca/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/lhsca/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/lhsca/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/lhsca/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/lhsca/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/lhsca/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/lhsca/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/lhsca/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/lhsca/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/lhsca/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/lhsca/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/lhsca/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on lista3.pdf (18 pages, 709052 bytes).
+Output written on lista3.pdf (18 pages, 716011 bytes).
 PDF statistics:
  554 PDF objects out of 1000 (max. 8388607)
  276 named destinations out of 1000 (max. 500000)
